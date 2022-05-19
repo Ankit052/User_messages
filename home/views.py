@@ -3,6 +3,8 @@ from .models import Message
 from .serializers import MessageSerializer
 from rest_framework import viewsets
 from rest_framework.permissions import IsAuthenticated 
+from rest_framework.throttling import UserRateThrottle
+from rest_framework.authentication import TokenAuthentication
 
 # Create your views here.
 
@@ -17,4 +19,6 @@ from rest_framework.permissions import IsAuthenticated
 class MessageViewSet(viewsets.ModelViewSet):
     queryset = Message.objects.all()
     serializer_class = MessageSerializer
-    # permission_classes = (IsAuthenticated,)
+    authentication_classes = [TokenAuthentication]
+    permission_classes = (IsAuthenticated,)
+    throttle_classes = [UserRateThrottle]

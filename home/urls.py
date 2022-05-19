@@ -9,6 +9,6 @@ router.register(r'',MessageViewSet, basename='message')
 
 urlpatterns = [
 
-     path('message/', include(router.urls)),
+     path('messages/', include(router.urls)),
     path('token/login/', views.obtain_auth_token, name='create-token')
 ]
