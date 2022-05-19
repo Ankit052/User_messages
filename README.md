@@ -1,3 +1,12 @@
+## Project Details
+
+●	Here we authenticating the user using token authentication.
+●	There's a quota of 10 messages per hour per user.
+
+
+
+
+
 ## Project Setup
 
 * Clone the project from github.
